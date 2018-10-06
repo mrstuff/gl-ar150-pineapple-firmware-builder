@@ -1,4 +1,4 @@
-# GLi GL-AR150 WiFi PINEAPPLE FIRMWARE BUILDER
+# GLi-NET GL-AR150 WiFi PINEAPPLE FIRMWARE BUILDER
 
 > all of the fancy work, none of the fancy name
 
@@ -9,9 +9,8 @@
 ### Clone
 
 ```
-git clone https://github.com/d1slact0r/gl-ar150-pineapple-firmware-builder.git --recursive
+git clone https://github.com/d1slact0r/gl-ar150-pineapple-firmware-builder.git
 ```
-This method ensures the submodules are pulled and synced.
 
 ### Run
 
@@ -19,10 +18,3 @@ The most common way to build the firmware is simply to run `build_pineapple.sh`.
 There are several flags you can use though. 
 - `-f` will force a build. Traditionally, if the currently synced upstream code is at its most current, the script will not build the code if it was already built on said codebase. This will force a rebuild to take place. 
 - `-c` will make a clean build. This will delete all upstream code, download the most recent (again) and compile the firmware. 
-- `-n` will make a build with the files present on the HDD at the moment.
-
----
-
-## TODO:
-
-- [ ] check if openwrt-cc/files exists
