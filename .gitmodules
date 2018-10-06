@@ -1,0 +1,4 @@
+[submodule "openwrt-cc"]
+	path = openwrt-cc
+	url = https://github.com/d1slact0r/openwrt-cc
+	branch = master
