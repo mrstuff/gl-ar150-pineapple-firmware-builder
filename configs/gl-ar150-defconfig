@@ -1669,14 +1669,14 @@ CONFIG_PACKAGE_kmod-fs-vfat=y
 #
 # CONFIG_PACKAGE_kmod-hid is not set
 # CONFIG_PACKAGE_kmod-hid-generic is not set
-# CONFIG_PACKAGE_kmod-input-core is not set
+CONFIG_PACKAGE_kmod-input-core=y
 # CONFIG_PACKAGE_kmod-input-evdev is not set
 # CONFIG_PACKAGE_kmod-input-gpio-encoder is not set
 # CONFIG_PACKAGE_kmod-input-gpio-keys is not set
 # CONFIG_PACKAGE_kmod-input-gpio-keys-polled is not set
 # CONFIG_PACKAGE_kmod-input-joydev is not set
 # CONFIG_PACKAGE_kmod-input-matrixkmap is not set
-# CONFIG_PACKAGE_kmod-input-polldev is not set
+CONFIG_PACKAGE_kmod-input-polldev=y
 # CONFIG_PACKAGE_kmod-input-uinput is not set
 
 #
@@ -1695,7 +1695,7 @@ CONFIG_PACKAGE_kmod-ledtrig-netdev=y
 # CONFIG_PACKAGE_kmod-ledtrig-oneshot is not set
 CONFIG_PACKAGE_kmod-ledtrig-timer=y
 # CONFIG_PACKAGE_kmod-ledtrig-transient is not set
-# CONFIG_PACKAGE_kmod-ledtrig-usbdev is not set
+CONFIG_PACKAGE_kmod-ledtrig-usbdev=y
 
 #
 # Libraries
@@ -1710,7 +1710,7 @@ CONFIG_PACKAGE_kmod-lib-crc16=y
 # CONFIG_PACKAGE_kmod-lib-lz4 is not set
 # CONFIG_PACKAGE_kmod-lib-lzo is not set
 # CONFIG_PACKAGE_kmod-lib-textsearch is not set
-# CONFIG_PACKAGE_kmod-lib-zlib is not set
+CONFIG_PACKAGE_kmod-lib-zlib=y
 
 #
 # Native Language Support
@@ -1979,7 +1979,7 @@ CONFIG_PACKAGE_kmod-usb-net=y
 # CONFIG_PACKAGE_kmod-usb-net-asix is not set
 # CONFIG_PACKAGE_kmod-usb-net-asix-ax88179 is not set
 # CONFIG_PACKAGE_kmod-usb-net-cdc-eem is not set
-# CONFIG_PACKAGE_kmod-usb-net-cdc-ether is not set
+CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y
 # CONFIG_PACKAGE_kmod-usb-net-cdc-mbim is not set
 # CONFIG_PACKAGE_kmod-usb-net-cdc-ncm is not set
 # CONFIG_PACKAGE_kmod-usb-net-cdc-subset is not set
@@ -1992,7 +1992,7 @@ CONFIG_PACKAGE_kmod-usb-net-ipheth=y
 # CONFIG_PACKAGE_kmod-usb-net-mcs7830 is not set
 # CONFIG_PACKAGE_kmod-usb-net-pegasus is not set
 # CONFIG_PACKAGE_kmod-usb-net-qmi-wwan is not set
-# CONFIG_PACKAGE_kmod-usb-net-rndis is not set
+CONFIG_PACKAGE_kmod-usb-net-rndis=y
 # CONFIG_PACKAGE_kmod-usb-net-rtl8150 is not set
 # CONFIG_PACKAGE_kmod-usb-net-rtl8152 is not set
 # CONFIG_PACKAGE_kmod-usb-net-sierrawireless is not set
@@ -2122,7 +2122,7 @@ CONFIG_PACKAGE_kmod-rt2x00-pci=y
 CONFIG_PACKAGE_kmod-rt2x00-usb=y
 # CONFIG_PACKAGE_kmod-rt61-pci is not set
 # CONFIG_PACKAGE_kmod-rt73-usb is not set
-# CONFIG_PACKAGE_kmod-rtl8180 is not set
+CONFIG_PACKAGE_kmod-rtl8180=y
 CONFIG_PACKAGE_kmod-rtl8187=y
 CONFIG_PACKAGE_kmod-rtl8192c-common=y
 # CONFIG_PACKAGE_kmod-rtl8192ce is not set
@@ -2772,7 +2772,7 @@ CONFIG_PACKAGE_libelf1=y
 # CONFIG_PACKAGE_libftdi1 is not set
 # CONFIG_PACKAGE_libgcrypt is not set
 # CONFIG_PACKAGE_libgd is not set
-# CONFIG_PACKAGE_libgdbm is not set
+CONFIG_PACKAGE_libgdbm=y
 CONFIG_PACKAGE_libgmp=y
 # CONFIG_PACKAGE_libgpg-error is not set
 # CONFIG_PACKAGE_libgpgme is not set
@@ -2835,8 +2835,8 @@ CONFIG_PACKAGE_libltdl=y
 CONFIG_PACKAGE_libncurses=y
 # CONFIG_PACKAGE_libncursesw is not set
 # CONFIG_PACKAGE_libneon is not set
-# CONFIG_PACKAGE_libnet0 is not set
-# CONFIG_PACKAGE_libnet1 is not set
+CONFIG_PACKAGE_libnet0=y
+CONFIG_PACKAGE_libnet1=y
 # CONFIG_PACKAGE_libnetconf is not set
 # CONFIG_PACKAGE_libnetfilter-acct is not set
 # CONFIG_PACKAGE_libnetfilter-conntrack is not set
@@ -2876,7 +2876,7 @@ CONFIG_PACKAGE_libpcap=y
 # Configuration
 #
 # CONFIG_PCAP_HAS_USB is not set
-# CONFIG_PACKAGE_libpcre is not set
+CONFIG_PACKAGE_libpcre=y
 # CONFIG_PACKAGE_libpcre16 is not set
 # CONFIG_PACKAGE_libpcrecpp is not set
 # CONFIG_PACKAGE_libpcsclite is not set
@@ -3664,7 +3664,7 @@ CONFIG_PACKAGE_iptables-mod-nat-extra=y
 #
 # SSH
 #
-# CONFIG_PACKAGE_autossh is not set
+CONFIG_PACKAGE_autossh=y
 # CONFIG_PACKAGE_corkscrew is not set
 # CONFIG_PACKAGE_gesftpserver is not set
 # CONFIG_PACKAGE_openssh-client is not set
@@ -3923,7 +3923,7 @@ CONFIG_PACKAGE_iptables-mod-nat-extra=y
 # CONFIG_PACKAGE_tinyproxy is not set
 # CONFIG_PACKAGE_transocks is not set
 # CONFIG_PACKAGE_tsocks is not set
-# CONFIG_PACKAGE_uhttpd is not set
+CONFIG_PACKAGE_uhttpd=y
 # CONFIG_PACKAGE_uhttpd_debug is not set
 # CONFIG_PACKAGE_wccpd is not set
 
@@ -3998,7 +3998,7 @@ CONFIG_PACKAGE_iptables-mod-nat-extra=y
 # CONFIG_PACKAGE_bwping is not set
 # CONFIG_PACKAGE_cdp-tools is not set
 CONFIG_PACKAGE_chat=y
-# CONFIG_PACKAGE_crda is not set
+CONFIG_PACKAGE_crda=y
 # CONFIG_PACKAGE_cshark is not set
 # CONFIG_PACKAGE_cutter is not set
 # CONFIG_PACKAGE_darkstat is not set
@@ -4034,11 +4034,11 @@ CONFIG_PACKAGE_chat=y
 # CONFIG_PACKAGE_hnet-full-secure is not set
 # CONFIG_PACKAGE_hnetd-nossl is not set
 # CONFIG_PACKAGE_hnetd-openssl is not set
-# CONFIG_PACKAGE_hostapd is not set
+CONFIG_PACKAGE_hostapd=y
 CONFIG_PACKAGE_hostapd-common=y
 # CONFIG_PACKAGE_hostapd-common-old is not set
 # CONFIG_PACKAGE_hostapd-mini is not set
-# CONFIG_PACKAGE_hostapd-utils is not set
+CONFIG_PACKAGE_hostapd-utils=y
 # CONFIG_PACKAGE_hpavcfg is not set
 # CONFIG_PACKAGE_hping3 is not set
 # CONFIG_PACKAGE_httping is not set
@@ -4323,7 +4323,7 @@ CONFIG_PACKAGE_wwan=y
 #
 # CONFIG_PACKAGE_joe is not set
 # CONFIG_PACKAGE_mg is not set
-# CONFIG_PACKAGE_nano is not set
+CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_vim is not set
 # CONFIG_PACKAGE_vim-full is not set
 # CONFIG_PACKAGE_vim-help is not set
@@ -4439,7 +4439,7 @@ CONFIG_PACKAGE_fdisk=y
 # CONFIG_PACKAGE_lsblk is not set
 # CONFIG_PACKAGE_lvm2 is not set
 # CONFIG_PACKAGE_partx-utils is not set
-# CONFIG_PACKAGE_sdparm is not set
+CONFIG_PACKAGE_sdparm=y
 # CONFIG_PACKAGE_sfdisk is not set
 CONFIG_PACKAGE_swap-utils=y
 # CONFIG_PACKAGE_wipefs is not set
@@ -4473,7 +4473,7 @@ CONFIG_PACKAGE_swap-utils=y
 # CONFIG_PACKAGE_avrusbboot is not set
 # CONFIG_PACKAGE_bandwidthd is not set
 # CONFIG_PACKAGE_bandwidthd-pgsql is not set
-# CONFIG_PACKAGE_bash is not set
+CONFIG_PACKAGE_bash=y
 # CONFIG_PACKAGE_bash-completion is not set
 # CONFIG_PACKAGE_bc is not set
 # CONFIG_PACKAGE_bluez-daemon is not set
@@ -4493,7 +4493,7 @@ CONFIG_PACKAGE_swap-utils=y
 # CONFIG_PACKAGE_clish is not set
 # CONFIG_PACKAGE_cmdpad is not set
 # CONFIG_PACKAGE_collectd is not set
-# CONFIG_PACKAGE_comgt is not set
+CONFIG_PACKAGE_comgt=y
 # CONFIG_PACKAGE_comgt-directip is not set
 # CONFIG_PACKAGE_comgt-ncm is not set
 # CONFIG_PACKAGE_coreutils is not set
@@ -4515,7 +4515,7 @@ CONFIG_PACKAGE_swap-utils=y
 # CONFIG_PACKAGE_dt is not set
 # CONFIG_PACKAGE_dtach is not set
 # CONFIG_PACKAGE_dump1090 is not set
-# CONFIG_PACKAGE_empty is not set
+CONFIG_PACKAGE_empty=y
 # CONFIG_PACKAGE_event_test is not set
 # CONFIG_PACKAGE_fancontroled is not set
 # CONFIG_PACKAGE_fconfig is not set
@@ -4589,7 +4589,7 @@ CONFIG_PACKAGE_libjson-script=y
 # CONFIG_PACKAGE_lsof is not set
 # CONFIG_PACKAGE_lxc is not set
 # CONFIG_PACKAGE_maccalc is not set
-# CONFIG_PACKAGE_macchanger is not set
+CONFIG_PACKAGE_macchanger=y
 # CONFIG_PACKAGE_mbus-serial is not set
 # CONFIG_PACKAGE_mbus-tcp is not set
 # CONFIG_PACKAGE_mc is not set
