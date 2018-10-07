@@ -14,7 +14,9 @@
 #include <linux/gpio.h>
 
 #include <asm/mach-ath79/ath79.h>
+#include <asm/mach-ath79/ar71xx_regs.h>
 
+#include "common.h"
 #include "dev-eth.h"
 #include "dev-gpio-buttons.h"
 #include "dev-leds-gpio.h"
@@ -36,7 +38,7 @@
 #define GL_AR150_KEYS_DEBOUNCE_INTERVAL	(3 * GL_AR150_KEYS_POLL_INTERVAL)
 
 #define GL_AR150_MAC0_OFFSET	0x0000
-#define GL_AR150_MAC1_OFFSET	0x0000
+#define GL_AR150_MAC1_OFFSET	0x0006
 #define GL_AR150_CALDATA_OFFSET	0x1000
 #define GL_AR150_WMAC_MAC_OFFSET	0x0000
 
@@ -72,7 +74,7 @@ static struct gpio_keys_button gl_ar150_gpio_keys[] __initdata = {
 		.code = BTN_7,
 		.debounce_interval = GL_AR150_KEYS_DEBOUNCE_INTERVAL,
 		.gpio = GL_AR150_GPIO_BTN_MANUAL,
-		.active_low = 0,
+		.active_low = 1,
 	},
 	{
 		.desc = "BTN_8",
@@ -80,7 +82,7 @@ static struct gpio_keys_button gl_ar150_gpio_keys[] __initdata = {
 		.code = BTN_8,
 		.debounce_interval = GL_AR150_KEYS_DEBOUNCE_INTERVAL,
 		.gpio = GL_AR150_GPIO_BTN_AUTO,
-		.active_low = 0,
+		.active_low = 1,
 	},
 	{
 		.desc = "reset",
@@ -88,15 +90,36 @@ static struct gpio_keys_button gl_ar150_gpio_keys[] __initdata = {
 		.code = KEY_RESTART,
 		.debounce_interval = GL_AR150_KEYS_DEBOUNCE_INTERVAL,
 		.gpio = GL_AR150_GPIO_BTN_RESET,
-		.active_low = 0,
+		.active_low = 1,
 	},
 };
+
+static void __init gl_ar150_gpio_setup(void)
+{
+	u32 t;
+
+	ath79_gpio_function_disable(AR933X_GPIO_FUNC_ETH_SWITCH_LED0_EN |
+				     AR933X_GPIO_FUNC_ETH_SWITCH_LED1_EN |
+				     AR933X_GPIO_FUNC_ETH_SWITCH_LED2_EN |
+				     AR933X_GPIO_FUNC_ETH_SWITCH_LED3_EN |
+				     AR933X_GPIO_FUNC_ETH_SWITCH_LED4_EN);
+
+	t = ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
+	t |= AR933X_BOOTSTRAP_MDIO_GPIO_EN;
+	ath79_reset_wr(AR933X_RESET_REG_BOOTSTRAP, t);
+
+	gpio_request_one(GL_AR150_GPIO_USB_POW,
+			 GPIOF_OUT_INIT_LOW | GPIOF_EXPORT_DIR_FIXED,
+			 "USB power");
+}
 
 static void __init gl_ar150_setup(void)
 {
 
 	/* ART base address */
 	u8 *art = (u8 *) KSEG1ADDR(0x1fff0000);
+
+	gl_ar150_gpio_setup();
 
 	/* disable PHY_SWAP and PHY_ADDR_SWAP bits */
 	ath79_setup_ar933x_phy4_switch(false, false);
@@ -122,7 +145,7 @@ static void __init gl_ar150_setup(void)
 	ath79_register_eth(1);
 
 	/* register wireless mac with cal data */
-	ath79_register_wmac(art + GL_AR150_CALDATA_OFFSET, art + GL_AR150_WMAC_MAC_OFFSET);
+	ath79_register_wmac(art + GL_AR150_CALDATA_OFFSET, NULL);
 }
 
 MIPS_MACHINE(ATH79_MACH_GL_AR150, "GL-AR150", "WiFi Pineapple NANO",gl_ar150_setup);
