@@ -139,13 +139,13 @@ static void __init gl_ar150_setup(void)
 
 	/* register eth0 as WAN, eth1 as LAN */
 	ath79_init_mac(ath79_eth0_data.mac_addr, art+GL_AR150_MAC0_OFFSET, 0);
-	ath79_init_mac(ath79_eth1_data.mac_addr, art+GL_AR150_MAC1_OFFSET, 0);
+	/*ath79_init_mac(ath79_eth1_data.mac_addr, art+GL_AR150_MAC1_OFFSET, 0);*/
 	ath79_register_mdio(0, 0x0);
 	ath79_register_eth(0);
-	ath79_register_eth(1);
+	/*ath79_register_eth(1);*/
 
 	/* register wireless mac with cal data */
-	ath79_register_wmac(art + GL_AR150_CALDATA_OFFSET, NULL);
+	ath79_register_wmac(art + GL_AR150_CALDATA_OFFSET, art + GL_AR150_WMAC_MAC_OFFSET);
 }
 
 MIPS_MACHINE(ATH79_MACH_GL_AR150, "GL-AR150", "WiFi Pineapple NANO",gl_ar150_setup);
