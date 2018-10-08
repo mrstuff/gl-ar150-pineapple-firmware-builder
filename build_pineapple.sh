@@ -95,6 +95,7 @@ elif
     current_version=`cat "$top"/configs/.upstream_version`
     echo "cleaning up..."
     rm -rf "$top"/_upgrade-"$current_version".bin.extracted/
+    rm -rf "$top"/upgrade-"$current_version".bin
     cd "$top"/openwrt-cc
     make dirclean
     rm -f .config
