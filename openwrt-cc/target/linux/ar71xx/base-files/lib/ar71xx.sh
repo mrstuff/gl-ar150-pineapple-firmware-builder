@@ -120,6 +120,9 @@ tplink_board_detect() {
 	"3C0001"*)
 		model="OOLITE"
 		;;
+	"4e414e4f"*)
+		model="pineapple-nano"
+		;;
 	"3C0002"*)
 		model="MINIBOX_V1"
 		;;
