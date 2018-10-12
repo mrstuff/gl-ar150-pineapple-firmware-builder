@@ -144,14 +144,6 @@ define Device/weio
 endef
 TARGET_DEVICES += weio
 
-define Device/gl-ar150
-  BOARDNAME = GL-AR150
-  IMAGE_SIZE = 16000k
-  CONSOLE = ttyATH0,115200
-  MTDPARTS = spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,16000k(firmware),64k(art)ro
-endef
-TARGET_DEVICES += gl-ar150
-
 define Device/gl-usb150
   BOARDNAME = GL-USB150
   IMAGE_SIZE = 16000k
@@ -757,6 +749,14 @@ define Device/oolite
     CONSOLE := ttyATH0,115200
 endef
 TARGET_DEVICES += oolite
+
+define Device/gl-ar150
+  BOARDNAME = GL-AR150
+  IMAGE_SIZE = 15872k
+  CONSOLE = ttyATH0,115200
+  MTDPARTS = spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,16000k(firmware),64k(art)ro
+endef
+TARGET_DEVICES += gl-ar150
 
 rootfs_type=$(patsubst jffs2-%,jffs2,$(patsubst squashfs-%,squashfs,$(1)))
 
