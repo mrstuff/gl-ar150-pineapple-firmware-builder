@@ -356,7 +356,6 @@ platform_check_image() {
 	mc-mac1200r | \
 	minibox-v1 |\
 	onion-omega | \
-	pineapple-nano | \
 	oolite | \
 	smart-300 | \
 	tl-mr10u | \

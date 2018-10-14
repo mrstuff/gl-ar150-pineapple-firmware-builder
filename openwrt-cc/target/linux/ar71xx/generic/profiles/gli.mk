@@ -17,7 +17,7 @@ $(eval $(call Profile,GLINET))
 
 define Profile/GL-AR150
 	NAME:=GL-AR150
-	PACKAGES:=kmod-usb-core kmod-usb2 kmod-ledtrig-usbdev kmod-ath9k-htc
+	PACKAGES:=kmod-usb-core kmod-usb2
 endef
 
 define Profile/GL-AR150/Description

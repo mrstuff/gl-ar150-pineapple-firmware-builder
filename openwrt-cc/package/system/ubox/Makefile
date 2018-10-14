@@ -28,17 +28,11 @@ define Package/ubox
   TITLE:=OpenWrt system helper toolbox
 endef
 
-define Package/logd
-  SECTION:=base
-  CATEGORY:=Base system
-  DEPENDS:=+libubox +libubus +libblobmsg-json +USE_GLIBC:librt
-  TITLE:=OpenWrt system log implementation
-endef
-
 define Package/ubox/install
-	$(INSTALL_DIR) $(1)/sbin $(1)/usr/sbin $(1)/lib/
+	$(INSTALL_DIR) $(1)/sbin $(1)/usr/sbin $(1)/lib/ $(1)/etc/init.d/
 
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/{kmodloader,validate_data} $(1)/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/{kmodloader,logd,logread,validate_data} $(1)/sbin/
+	$(INSTALL_BIN) ./files/log.init $(1)/etc/init.d/log
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/lib/libvalidate.so $(1)/lib
 
 	$(LN) ../../sbin/kmodloader $(1)/usr/sbin/rmmod
@@ -48,12 +42,4 @@ define Package/ubox/install
 	$(LN) ../../sbin/kmodloader $(1)/usr/sbin/modprobe
 endef
 
-define Package/logd/install
-	$(INSTALL_DIR) $(1)/sbin $(1)/etc/init.d/
-
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/{logd,logread} $(1)/sbin/
-	$(INSTALL_BIN) ./files/log.init $(1)/etc/init.d/log
-endef
-
 $(eval $(call BuildPackage,ubox))
-$(eval $(call BuildPackage,logd))
